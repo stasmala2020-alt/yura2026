@@ -1,0 +1,310 @@
+[21.07.2026 0:13] Юрец Село: <!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Справка Банка России</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #e6e9ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Times New Roman', serif;
+  }
+  .document {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    padding: 20mm 25mm;
+    margin: 20px auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    position: relative;
+  }
+  /* Водяной знак */
+  .watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 60px;
+    color: rgba(0,0,0,0.04);
+    font-weight: bold;
+    letter-spacing: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #1a2a4a;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .bank-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a2a4a;
+    letter-spacing: 1px;
+  }
+  .bank-name small {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+  }
+  .logo svg {
+    width: 70px;
+    height: 70px;
+  }
+  .title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 30px 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1a2a4a;
+  }
+  .info-block {
+    margin: 25px 0;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .info-block .label {
+    font-weight: bold;
+    display: inline-block;
+    width: 200px;
+  }
+  .info-block .value {
+    border-bottom: 1px solid #999;
+    padding: 0 10px;
+    display: inline-block;
+    min-width: 200px;
+  }
+  .summa-propisyu {
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #1a2a4a;
+  }
+  .table-info {
+    margin: 30px 0;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+  }
+  .table-info td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #ccc;
+  }
+  .table-info .label-cell {
+    font-weight: bold;
+    width: 35%;
+  }
+  .signatures {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .signature-block {
+    text-align: center;
+    min-width: 150px;
+  }
+  .signature-line {
+    width: 180px;
+    border-bottom: 1px solid #000;
+    margin: 5px auto 0 auto;
+  }
+  .signature-label {
+    font-size: 15px;
+    margin-top: 4px;
+  }
+  .stamp-area {
+    text-align: center;
+    margin-top: 40px;
+    border: 2px dashed #1a2a4a;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #1a2a4a;
+    background: #f8faff;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stamp-area strong {
+    font-size: 14px;
+  }
+  .footer-date {
+    margin-top: 50px;
+    text-align: right;
+    font-size: 17px;
+  }
+  .footer-date span {
+    font-weight: bold;
+  }
+  .note {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    font-style: italic;
+  }
+  @media print {
+    body { background: white; }
+    .document { box-shadow: none; margin: 0; padding: 18mm 22mm; }
+  }
+</style>
+</head>
+<body>
+<div class="document">
+  <div class="watermark">БАНК РОССИИ</div>
+  <div class="content">
+
+    <!-- ШАПКА -->
+    <div class="header">
+      <div class="bank-name">
+        БАНК РОССИИ
+        <small>Центральный банк Российской Федерации</small>
+      </div>
+      <div class="logo">
+        <!-- Герб Банка России (SVG) -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#1a2a4a" stroke-width="3"/>
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#1a2a4a" stroke-width="1.5"/>
+[21.07.2026 0:13] Юрец Село: <text x="50" y="58" font-size="38" text-anchor="middle" font-weight="bold" fill="#1a2a4a" font-family="serif">ЦБ</text>
+          <text x="50" y="80" font-size="11" text-anchor="middle" fill="#1a2a4a" font-family="serif">РОССИЯ</text>
+          <line x1="15" y1="50" x2="85" y2="50" stroke="#1a2a4a" stroke-width="1"/>
+          <line x1="50" y1="15" x2="50" y2="85" stroke="#1a2a4a" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ЗАГОЛОВОК -->
+    <div class="title">Справка о задолженности</div>
+
+    <!-- ДАТЫ (автоматически сегодня и неделя) -->
+    <div style="text-align:right; font-size:16px; margin-bottom:15px;">
+      <strong>Дата составления:</strong> <span id="todayDate"></span>
+    </div>
+
+    <!-- ОСНОВНАЯ ИНФОРМАЦИЯ -->
+    <div class="info-block">
+      <div><span class="label">Заемщик:</span> <span class="value">Алия Рифовна</span></div>
+      <div><span class="label">Вид задолженности:</span> <span class="value">Основной счет (кредитная задолженность)</span></div>
+      <div><span class="label">Сумма задолженности:</span> <span class="value">70 000 (Семьдесят тысяч) руб. 00 коп.</span></div>
+      <div class="summa-propisyu">Сумма прописью: <u>Семьдесят тысяч рублей 00 копеек</u></div>
+    </div>
+
+    <!-- ТАБЛИЦА С ДАТАМИ И СРОКАМИ -->
+    <table class="table-info">
+      <tr><td class="label-cell">Дата возникновения задолженности</td><td><span id="startDate"></span></td></tr>
+      <tr><td class="label-cell">Срок погашения (по договору)</td><td><span id="dueDate"></span></td></tr>
+      <tr><td class="label-cell">Задолженность по состоянию на</td><td><strong><span id="stateDate"></span></strong> (включительно)</td></tr>
+      <tr><td class="label-cell">Недельный срок с даты составления</td><td><strong><span id="weekLater"></span></strong></td></tr>
+      <tr><td class="label-cell">Просрочка (дней)</td><td><span id="overdueDays"></span> дней</td></tr>
+    </table>
+
+    <!-- ДОПОЛНИТЕЛЬНО -->
+    <div style="font-size:16px; margin:15px 0; padding:12px; background:#f5f7fc; border-left:4px solid #1a2a4a;">
+      <strong>Дополнительная информация:</strong><br>
+      Задолженность не погашена в установленный срок. Начисление процентов и пеней продолжается до полного исполнения обязательств.
+      Данные актуальны на момент выдачи справки.
+    </div>
+
+    <!-- ПОДПИСИ И ПЕЧАТЬ -->
+    <div class="signatures">
+      <div class="signature-block">
+        <div><strong>Уполномоченное лицо</strong></div>
+        <div style="margin-top:5px;">__________________</div>
+        <div class="signature-line"></div>
+        <div class="signature-label">(подпись)</div>
+      </div>
+      <div class="signature-block">
+        <div><strong>Главный бухгалтер</strong></div>
+        <div style="margin-top:5px;">__________________</div>
+        <div class="signature-line"></div>
+        <div class="signature-label">(подпись)</div>
+      </div>
+    </div>
+
+    <!-- ПЕЧАТЬ -->
+    <div style="display:flex; justify-content:center; margin-top:30px;">
+      <div class="stamp-area">
+        <strong>М.П.</strong>
+        <span style="font-size:10px; margin-top:4px;">Печать</span>
+        <span style="font-size:10px;">Банка России</span>
+      </div>
+    </div>
+
+    <!-- ДАТА ВЫДАЧИ -->
+    <div class="footer-date">
+      <span>Дата выдачи:</span> <span id="issueDate"></span>
+    </div>
+
+    <div class="note">
+      * Настоящая справка действительна в течение 14 дней с даты выдачи.
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function() {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const dateStr = dd + '.' + mm + '.' + yyyy;
+
+    // Формат "дд месяц гггг" для красоты
+    const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+    const dateNice = dd + ' ' + months[today.getMonth()] + ' ' + yyyy;
+
+    // Неделя от сегодня
+    const weekLater = new Date(today);
+    weekLater.setDate(today.getDate() + 7);
+[21.07.2026 0:13] Юрец Село: const dd2 = String(weekLater.getDate()).padStart(2,'0');
+    const mm2 = String(weekLater.getMonth()+1).padStart(2,'0');
+    const yyyy2 = weekLater.getFullYear();
+    const weekStr = dd2 + '.' + mm2 + '.' + yyyy2;
+
+    // Дата начала задолженности (например, 3 месяца назад)
+    const startD = new Date(today);
+    startD.setMonth(today.getMonth() - 3);
+    const startStr = String(startD.getDate()).padStart(2,'0') + '.' + String(startD.getMonth()+1).padStart(2,'0') + '.' + startD.getFullYear();
+
+    // Срок погашения (например, через 6 месяцев от сегодня)
+    const dueD = new Date(today);
+    dueD.setMonth(today.getMonth() + 6);
+    const dueStr = String(dueD.getDate()).padStart(2,'0') + '.' + String(dueD.getMonth()+1).padStart(2,'0') + '.' + dueD.getFullYear();
+
+    // Просрочка (дней) - например, 45 дней
+    const overdue = 45;
+
+    document.getElementById('todayDate').textContent = dateNice;
+    document.getElementById('startDate').textContent = startStr;
+    document.getElementById('dueDate').textContent = dueStr;
+    document.getElementById('stateDate').textContent = dateNice;
+    document.getElementById('weekLater').textContent = weekStr;
+    document.getElementById('overdueDays').textContent = overdue;
+    document.getElementById('issueDate').textContent = dateNice;
+  })();
+</script>
+
+</body>
+</html>
