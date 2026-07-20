@@ -4,169 +4,240 @@
 <meta charset="UTF-8">
 <title>Справка Банка России</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   body {
-    background: #e6e9ef;
+    background: #c0c4cc;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Times New Roman', serif;
+    font-family: 'Times New Roman', 'Nimbus Roman', serif;
   }
   .document {
     width: 210mm;
     min-height: 297mm;
-    background: white;
-    padding: 20mm 25mm;
+    background: #ffffff;
+    padding: 22mm 26mm;
     margin: 20px auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
     position: relative;
   }
-  /* Водяной знак */
+
   .watermark {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-30deg);
-    font-size: 60px;
-    color: rgba(0,0,0,0.04);
+    transform: translate(-50%, -50%) rotate(-28deg);
+    font-size: 72px;
+    color: rgba(0,0,0,0.035);
     font-weight: bold;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
     white-space: nowrap;
     pointer-events: none;
     z-index: 0;
+    font-family: 'Times New Roman', serif;
   }
+
   .content {
     position: relative;
     z-index: 1;
   }
+
   .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 2px solid #1a2a4a;
-    padding-bottom: 12px;
-    margin-bottom: 20px;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 14px;
+    margin-bottom: 22px;
   }
   .bank-name {
-    font-size: 22px;
-    font-weight: bold;
-    color: #1a2a4a;
-    letter-spacing: 1px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #000;
+    line-height: 1.3;
   }
   .bank-name small {
     display: block;
-    font-size: 14px;
-    font-weight: normal;
-    color: #333;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #222;
   }
   .logo svg {
-    width: 70px;
-    height: 70px;
+    width: 76px;
+    height: 76px;
   }
+
   .title {
     text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    margin: 30px 0 20px 0;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 32px 0 18px 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #1a2a4a;
+    letter-spacing: 3px;
+    color: #000;
   }
+
+  .reg-number {
+    text-align: right;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+  .reg-number span {
+    font-weight: 700;
+  }
+
   .info-block {
-    margin: 25px 0;
+    margin: 20px 0 18px 0;
     font-size: 17px;
-    line-height: 1.9;
+    line-height: 2.0;
   }
   .info-block .label {
-    font-weight: bold;
+    font-weight: 700;
     display: inline-block;
-    width: 200px;
+    width: 210px;
   }
   .info-block .value {
-    border-bottom: 1px solid #999;
-    padding: 0 10px;
     display: inline-block;
-    min-width: 200px;
+    border-bottom: 1px solid #888;
+    padding: 0 12px;
+    min-width: 220px;
   }
+
   .summa-propisyu {
-    margin-top: 10px;
+    margin: 10px 0 6px 0;
     font-size: 17px;
-    font-weight: bold;
-    color: #1a2a4a;
-  }
-  .table-info {
-    margin: 30px 0;
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 16px;
-  }
-  .table-info td {
-    padding: 8px 6px;
+    font-weight: 700;
+    padding: 6px 0;
+    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
   }
-  .table-info .label-cell {
-    font-weight: bold;
-    width: 35%;
+
+  .dates-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0 22px 0;
+    font-size: 16.5px;
   }
+  .dates-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #aaa;
+  }
+  .dates-table .lbl {
+    font-weight: 700;
+    width: 42%;
+    letter-spacing: 0.3px;
+  }
+  .dates-table .val {
+    font-weight: 600;
+  }
+
+  .extra-box {
+    font-size: 15.5px;
+    margin: 18px 0 22px 0;
+    padding: 16px 18px;
+    background: #f4f6fa;
+    border-left: 5px solid #1a1a1a;
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.7;
+  }
+  .extra-box strong {
+    font-size: 16px;
+  }
+  .extra-box ul {
+    margin: 6px 0 0 20px;
+    padding-left: 10px;
+  }
+  .extra-box li {
+    margin-bottom: 4px;
+  }
+
   .signatures {
-    margin-top: 45px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
   }
   .signature-block {
     text-align: center;
-    min-width: 150px;
+    min-width: 170px;
+  }
+  .signature-block .position {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .signature-block .fio {
+    font-size: 16px;
+    margin-top: 2px;
+    font-style: italic;
   }
   .signature-line {
-    width: 180px;
-    border-bottom: 1px solid #000;
-    margin: 5px auto 0 auto;
+    width: 200px;
+    border-bottom: 1.5px solid #000;
+    margin: 8px auto 4px auto;
   }
   .signature-label {
-    font-size: 15px;
-    margin-top: 4px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
   }
-  .stamp-area {
-    text-align: center;
-    margin-top: 40px;
-    border: 2px dashed #1a2a4a;
+
+  .stamp-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  .stamp {
+    width: 120px;
+    height: 120px;
+    border: 2.5px solid #1a1a1a;
     border-radius: 50%;
-    width: 110px;
-    height: 110px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
-    color: #1a2a4a;
-    background: #f8faff;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    background: #fafcff;
+    color: #000;
+    padding: 8px; line-height: 1.4;
   }
-  .stamp-area strong {
-    font-size: 14px;
+  .stamp .small {
+    font-weight: 400;
+    font-size: 11px;
   }
+
   .footer-date {
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: right;
     font-size: 17px;
+    font-weight: 600;
+    border-top: 1px solid #bbb;
+    padding-top: 18px;
   }
-  .footer-date span {
-    font-weight: bold;
-  }
+
   .note {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #555;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
+    margin-top: 16px;
+    font-size: 13.5px;
+    color: #444;
     font-style: italic;
+    border-top: 1px dashed #ccc;
+    padding-top: 14px;
   }
+
   @media print {
     body { background: white; }
-    .document { box-shadow: none; margin: 0; padding: 18mm 22mm; }
+    .document { box-shadow: none; margin: 0; padding: 20mm 24mm; }
   }
 </style>
 </head>
@@ -175,136 +246,91 @@
   <div class="watermark">БАНК РОССИИ</div>
   <div class="content">
 
-    <!-- ШАПКА -->
     <div class="header">
       <div class="bank-name">
         БАНК РОССИИ
         <small>Центральный банк Российской Федерации</small>
       </div>
       <div class="logo">
-        <!-- Герб Банка России (SVG) -->
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="#1a2a4a" stroke-width="3"/>
-          <circle cx="50" cy="50" r="35" fill="none" stroke="#1a2a4a" stroke-width="1.5"/>
-         <text x="50" y="58" font-size="38" text-anchor="middle" font-weight="bold" fill="#1a2a4a" font-family="serif">ЦБ</text>
-          <text x="50" y="80" font-size="11" text-anchor="middle" fill="#1a2a4a" font-family="serif">РОССИЯ</text>
-          <line x1="15" y1="50" x2="85" y2="50" stroke="#1a2a4a" stroke-width="1"/>
-          <line x1="50" y1="15" x2="50" y2="85" stroke="#1a2a4a" stroke-width="1"/>
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#1a1a1a" stroke-width="2.8"/>
+          <circle cx="50" cy="50" r="34" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+          <text x="50" y="58" font-size="40" text-anchor="middle" font-weight="700" fill="#1a1a1a" font-family="serif">ЦБ</text>
+          <text x="50" y="80" font-size="12" text-anchor="middle" font-weight="600" fill="#1a1a1a" font-family="serif">РОССИЯ</text>
+          <line x1="14" y1="50" x2="86" y2="50" stroke="#1a1a1a" stroke-width="1"/>
+          <line x1="50" y1="14" x2="50" y2="86" stroke="#1a1a1a" stroke-width="1"/>
         </svg>
       </div>
     </div>
 
-    <!-- ЗАГОЛОВОК -->
-    <div class="title">Справка о задолженности</div>
-
-    <!-- ДАТЫ (автоматически сегодня и неделя) -->
-    <div style="text-align:right; font-size:16px; margin-bottom:15px;">
-      <strong>Дата составления:</strong> <span id="todayDate"></span>
+    <div class="reg-number">
+      <span>Исх. №</span> 01-08/2026-СП от 21.07.2026
     </div>
 
-    <!-- ОСНОВНАЯ ИНФОРМАЦИЯ -->
+    <div class="title">Справка о задолженности</div>
+
     <div class="info-block">
-      <div><span class="label">Заемщик:</span> <span class="value">Алия Рифовна</span></div>
-      <div><span class="label">Вид задолженности:</span> <span class="value">Основной счет (кредитная задолженность)</span></div>
-      <div><span class="label">Сумма задолженности:</span> <span class="value">70 000 (Семьдесят тысяч) руб. 00 коп.</span></div>
+      <div><span class="label">Заемщик (Ф.И.О.)</span> <span class="value">Алия Рифовна</span></div>
+      <div><span class="label">Вид задолженности</span> <span class="value">Основной счет (кредитный договор)</span></div>
+      <div><span class="label">Сумма задолженности</span> <span class="value">70 000 (Семьдесят тысяч) руб. 00 коп.</span></div>
       <div class="summa-propisyu">Сумма прописью: <u>Семьдесят тысяч рублей 00 копеек</u></div>
     </div>
 
-    <!-- ТАБЛИЦА С ДАТАМИ И СРОКАМИ -->
-    <table class="table-info">
-      <tr><td class="label-cell">Дата возникновения задолженности</td><td><span id="startDate"></span></td></tr>
-      <tr><td class="label-cell">Срок погашения (по договору)</td><td><span id="dueDate"></span></td></tr>
-      <tr><td class="label-cell">Задолженность по состоянию на</td><td><strong><span id="stateDate"></span></strong> (включительно)</td></tr>
-      <tr><td class="label-cell">Недельный срок с даты составления</td><td><strong><span id="weekLater"></span></strong></td></tr>
-      <tr><td class="label-cell">Просрочка (дней)</td><td><span id="overdueDays"></span> дней</td></tr>
+    <table class="dates-table">
+      <tr><td class="lbl">Дата предоставления займа (кредита)</td><td class="val">21 мая 2026 года (21.05.2026)</td></tr>
+      <tr><td class="lbl">Срок возврата (погашения) по договору</td><td class="val">28 мая 2026 года (28.05.2026) — 7 (семь) календарных дней</td></tr>
+      <tr><td class="lbl">Задолженность зафиксирована по состоянию на</td><td class="val">21 июля 2026 года (21.07.2026)</td></tr>
     </table>
 
-    <!-- ДОПОЛНИТЕЛЬНО -->
-    <div style="font-size:16px; margin:15px 0; padding:12px; background:#f5f7fc; border-left:4px solid #1a2a4a;">
-      <strong>Дополнительная информация:</strong><br>
-      Задолженность не погашена в установленный срок. Начисление процентов и пеней продолжается до полного исполнения обязательств.
-      Данные актуальны на момент выдачи справки.
-    </div>
+    <div class="extra-box">
+      <strong>Целевое назначение и особые условия предоставления денежных средств:</strong><br>
+      <ul>
+        <li>Денежные средства в размере 70 000 (Семьдесят тысяч) рублей 00 копеек выделены из <strong>резервного фонда Банка России</strong> в рамках реализации мероприятий по <strong>обеспечению финансовой безопасности и противодействию мошенническим действиям</strong> на территории Российской Федерации.</li>
+        <li>Заём предоставлен для проведения <strong>регламентных работ</strong> в целях выявления и блокировки несанкционированных транзакций, а также защиты персональных данных и счетов граждан от противоправных посягательств.</li>
+        <li>В соответствии с Федеральным законом от 10.07.2002 № 86-ФЗ «О Центральном банке Российской Федерации (Банке России)» и Положением Банка России от 29.03.2019 № 685-П, средства резерва подлежат целевому использованию с обязательным последующим отчётом об исполнении.</li>
+        <li>Возврат суммы займа должен быть осуществлён в сроки, установленные договором. В случае нарушения сроков возврата Банк России оставляет за собой право применять меры воздействия, предусмотренные действующим законодательством, включая начисление неустойки и обращение взыскания на имущество.</li>
+        <li><strong>Контроль за целевым использованием</strong> денежных средств осуществляется Департаментом финансового мониторинга и валютного контроля Банка России.</li>
+      </ul></div>
 
-    <!-- ПОДПИСИ И ПЕЧАТЬ -->
     <div class="signatures">
       <div class="signature-block">
-        <div><strong>Уполномоченное лицо</strong></div>
-        <div style="margin-top:5px;">__________________</div>
+        <div class="position">Председатель Банка России</div>
+        <div class="fio">Э.С. Набиуллина</div>
         <div class="signature-line"></div>
         <div class="signature-label">(подпись)</div>
       </div>
       <div class="signature-block">
-        <div><strong>Главный бухгалтер</strong></div>
-        <div style="margin-top:5px;">__________________</div>
+        <div class="position">Главный бухгалтер</div>
+        <div class="fio">О.И. Скоробогатова</div>
+        <div class="signature-line"></div>
+        <div class="signature-label">(подпись)</div>
+      </div>
+      <div class="signature-block">
+        <div class="position">Руководитель департамента</div>
+        <div class="fio">Д.В. Тулин</div>
         <div class="signature-line"></div>
         <div class="signature-label">(подпись)</div>
       </div>
     </div>
 
-    <!-- ПЕЧАТЬ -->
-    <div style="display:flex; justify-content:center; margin-top:30px;">
-      <div class="stamp-area">
+    <div class="stamp-wrapper">
+      <div class="stamp">
         <strong>М.П.</strong>
-        <span style="font-size:10px; margin-top:4px;">Печать</span>
-        <span style="font-size:10px;">Банка России</span>
+        <span>Печать</span>
+        <span>Банка России</span>
+        <span class="small">№ 001-2026</span>
       </div>
     </div>
 
-    <!-- ДАТА ВЫДАЧИ -->
     <div class="footer-date">
-      <span>Дата выдачи:</span> <span id="issueDate"></span>
+      Дата выдачи: 21 июля 2026 года
     </div>
 
     <div class="note">
-      * Настоящая справка действительна в течение 14 дней с даты выдачи.
+      * Настоящая справка действительна в течение 14 календарных дней с даты выдачи. За достоверность предоставленных сведений Банк России несёт ответственность в установленном законом порядке.
     </div>
 
   </div>
 </div>
-
-<script>
-  (function() {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2,'0');
-    const mm = String(today.getMonth()+1).padStart(2,'0');
-    const yyyy = today.getFullYear();
-    const dateStr = dd + '.' + mm + '.' + yyyy;
-
-    // Формат "дд месяц гггг" для красоты
-    const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
-    const dateNice = dd + ' ' + months[today.getMonth()] + ' ' + yyyy;
-
-    // Неделя от сегодня
-    const weekLater = new Date(today);
-    weekLater.setDate(today.getDate() + 7);
- const dd2 = String(weekLater.getDate()).padStart(2,'0');
-    const mm2 = String(weekLater.getMonth()+1).padStart(2,'0');
-    const yyyy2 = weekLater.getFullYear();
-    const weekStr = dd2 + '.' + mm2 + '.' + yyyy2;
-
-    // Дата начала задолженности (например, 3 месяца назад)
-    const startD = new Date(today);
-    startD.setMonth(today.getMonth() - 3);
-    const startStr = String(startD.getDate()).padStart(2,'0') + '.' + String(startD.getMonth()+1).padStart(2,'0') + '.' + startD.getFullYear();
-
-    // Срок погашения (например, через 6 месяцев от сегодня)
-    const dueD = new Date(today);
-    dueD.setMonth(today.getMonth() + 6);
-    const dueStr = String(dueD.getDate()).padStart(2,'0') + '.' + String(dueD.getMonth()+1).padStart(2,'0') + '.' + dueD.getFullYear();
-
-    // Просрочка (дней) - например, 45 дней
-    const overdue = 45;
-
-    document.getElementById('todayDate').textContent = dateNice;
-    document.getElementById('startDate').textContent = startStr;
-    document.getElementById('dueDate').textContent = dueStr;
-    document.getElementById('stateDate').textContent = dateNice;
-    document.getElementById('weekLater').textContent = weekStr;
-    document.getElementById('overdueDays').textContent = overdue;
-    document.getElementById('issueDate').textContent = dateNice;
-  })();
-</script>
-
 </body>
 </html>
